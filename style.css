@@ -9,3 +9,10 @@ body {
     align-self: center;
     
 }
+
+.options-pane {
+    display: flex;
+}
+ul {
+    list-style-type: none;
+}

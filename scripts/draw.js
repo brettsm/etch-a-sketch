@@ -1,10 +1,14 @@
 const DRAW_VIEW_HEIGHT = 600;
 const DRAW_VIEW_WIDTH = 600;
 let isMouseDown = false;
+let gridContainer = document.querySelector('.grid-container');
+gridContainer.setAttribute('style', `height: ${DRAW_VIEW_HEIGHT}px; width: ${DRAW_VIEW_WIDTH}px`);
 
 function createRandomColorGrid(numRows) {
-    let gridContainer = document.querySelector('.grid-container');
-    gridContainer.setAttribute('style', `height: ${DRAW_VIEW_HEIGHT}px; width: ${DRAW_VIEW_WIDTH}px`);
+    while(gridContainer.firstChild) {
+        gridContainer.removeChild(gridContainer.firstChild);
+    }
+
     for (let i = 0; i < numRows * numRows; i++) {
         let gridCell = document.createElement('div');
         gridCell.style.height = `${DRAW_VIEW_HEIGHT / numRows}px`;
@@ -30,6 +34,27 @@ function createRandomColorGrid(numRows) {
     }
 }
 
+let threeGridButton = document.getElementById('three-grid');
+threeGridButton.addEventListener('click', () => {
+    createRandomColorGrid(3);
+});
 
+let fiveGridButton = document.getElementById('five-grid');
+fiveGridButton.addEventListener('click', () => {
+    createRandomColorGrid(5);
+})
 
-createRandomColorGrid(10);
+let sixGridButton = document.getElementById('six-grid');
+sixGridButton.addEventListener('click', () => {
+    createRandomColorGrid(6);
+})
+
+let tenGridButton = document.getElementById('ten-grid');
+tenGridButton.addEventListener('click', () => {
+    createRandomColorGrid(10);
+});
+
+let twentyGridButton = document.getElementById('twenty-grid');
+twentyGridButton.addEventListener('click', () => {
+    createRandomColorGrid(20);
+});
