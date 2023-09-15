@@ -22,6 +22,7 @@ function createColorGrid(numRows) {
 
     for (let i = 0; i < numRows * numRows; i++) {
         let gridCell = document.createElement('div');
+        gridCell.classList.add('grid-cell');
         gridCell.style.height = `${DRAW_VIEW_HEIGHT / numRows}px`;
         gridCell.style.width = `${DRAW_VIEW_WIDTH / numRows}px`;
         gridCell.style.outline = '1px solid grey';

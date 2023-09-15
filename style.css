@@ -16,3 +16,7 @@ body {
 ul {
     list-style-type: none;
 }
+
+.grid-cell:hover {
+    background-color:gainsboro;
+}
